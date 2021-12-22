@@ -5,7 +5,7 @@ wait(3)
 path = workspace
 
 local function round(n)
-    return math.floor(n + 0.5)
+	return math.floor(n + 0.5)
 end
 
 Frame_Speed = 1 / 60 -- (1 / 30) OR (1 / 60)
@@ -22,13 +22,13 @@ lastframe = tick()
 
 
 function Swait(NUMBER)
-    if NUMBER == 0 or NUMBER == nil then
-        game:GetService("RunService").RenderStepped:wait()
-    else
-        for i = 1, NUMBER do
-            game:GetService("RunService").RenderStepped:wait()
-        end
-    end
+	if NUMBER == 0 or NUMBER == nil then
+		game:GetService("RunService").RenderStepped:wait()
+	else
+		for i = 1, NUMBER do
+			game:GetService("RunService").RenderStepped:wait()
+		end
+	end
 end
 
 
@@ -39,12 +39,12 @@ function SetTween(SPart,CFr,MoveStyle2,outorin2,AnimTime)
 local MoveStyle = Enum.EasingStyle[MoveStyle2]
 local outorin = Enum.EasingDirection[outorin2]
 local tweeningInformation = TweenInfo.new(
-    AnimTime,   
-    MoveStyle,
-    outorin,
-    0,
-    false,
-    0
+	AnimTime,	
+	MoveStyle,
+	outorin,
+	0,
+	false,
+	0
 )
 local MoveCF = CFr
 local tweenanim = TweenService:Create(SPart,tweeningInformation,MoveCF)
@@ -230,9 +230,9 @@ end
 print("cute boi")
 
 while true do Swait(10)
-    
+	
 for _,v in pairs(path:GetChildren()) do
-    coroutine.resume(coroutine.create(function()
+	coroutine.resume(coroutine.create(function()
 if v:FindFirstChild("BagTouchScript") and v:FindFirstChild("Rarity") then
 
 if game.Players.LocalPlayer.Character ~= nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
@@ -241,34 +241,34 @@ if game.Players.LocalPlayer.Character ~= nil and game.Players.LocalPlayer.Charac
 v.Main.distTag.Dis.Text = round((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Main.Position).magnitude).." m"
 local dist = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Main.Position).magnitude
 if dist < FadeDist then
-----------------------------------------------------    
+----------------------------------------------------	
 if v.Main.distTag.FadeEnabled.Value == true then
-    v.Main.distTag.FadeEnabled.Value = false
+	v.Main.distTag.FadeEnabled.Value = false
 for _,v2 in next, v.Main.distTag:GetDescendants() do 
 if v2:IsA("Frame") then
-    SetTween(v2,{BackgroundTransparency = 0.75},"Quad","InOut",1)
-end 
+	SetTween(v2,{BackgroundTransparency = 0.75},"Quad","InOut",1)
+end	
 if v2:IsA("TextLabel") then
-        SetTween(v2,{BackgroundTransparency = 0.75,TextTransparency = 0},"Quad","InOut",1)
-end 
+		SetTween(v2,{BackgroundTransparency = 0.75,TextTransparency = 0},"Quad","InOut",1)
+end	
 end
 end
 ----------------------------------------------------
 else -----------------------------------------------
-----------------------------------------------------    
+----------------------------------------------------	
 if v.Main.distTag.FadeEnabled.Value == false then
-    v.Main.distTag.FadeEnabled.Value = true
+	v.Main.distTag.FadeEnabled.Value = true
 for _,v2 in next, v.Main.distTag:GetDescendants() do 
 if v2:IsA("Frame") then
-        SetTween(v2,{BackgroundTransparency = 0.95},"Quad","InOut",1)
-end 
+		SetTween(v2,{BackgroundTransparency = 0.95},"Quad","InOut",1)
+end	
 if v2:IsA("TextLabel") then
-    SetTween(v2,{BackgroundTransparency = 0.95,TextTransparency = 0.5},"Quad","InOut",1)
-end 
+	SetTween(v2,{BackgroundTransparency = 0.95,TextTransparency = 0.5},"Quad","InOut",1)
+end	
 end
 
 end
-----------------------------------------------------    
+----------------------------------------------------	
 end
 
 
@@ -277,4 +277,4 @@ end
 
 end))
 end
-end[tpcolor=#008080][/tpcolor]
+end
